@@ -7,3 +7,4 @@ class Solution:
             if diff in m and m[diff] != i:
                 return [i, m[diff]]
             m[nums[i]] = i
+        return []
