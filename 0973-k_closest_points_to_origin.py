@@ -13,10 +13,19 @@ class Solution2:
             ans.append([x,y])
         return ans
 
-## We could also use a max_heap of size K and only store the k-closest
+## We could also use a max_heap of size K and only store the k-closest, nlogk
 ## (this means we don't need to store a list of all the distances)
-class Solution2:
+class Solution:
     def kClosest(self, points: List[List[int]], K: int) -> List[List[int]]:
         h = []
         for x,y in points:
             dist = x**2 + y**2
+
+            if len(h) < K:
+                heapq.heappush(h, (-dist, x, y))
+            else:
+                d, _, _ = h[0]
+                if dist < -d:
+                    heapq.heappushpop(h, (-dist, x, y))
+
+        return [hh[1:] for hh in h]
