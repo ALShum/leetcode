@@ -1,3 +1,5 @@
+# DFS through recursion or iteratively
+
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, x):
