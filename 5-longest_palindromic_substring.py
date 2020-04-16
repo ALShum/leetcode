@@ -1,3 +1,4 @@
+## For each letter of string, check for the longest palindrome centered at that letter
 class Solution:
     def longestPalindrome(self, s: str) -> str:
         maxSoFar = ''

@@ -1,3 +1,4 @@
+## Store a mapping of num in array > index position
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         m = {}

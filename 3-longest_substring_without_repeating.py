@@ -1,3 +1,6 @@
+## Add letters seen so far into an array
+## For each new letter check if seen before
+## If seen before, restart array right after index of the letter seen before
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         str_l = []

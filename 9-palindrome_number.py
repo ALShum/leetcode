@@ -1,3 +1,4 @@
+## Turn integer into string and check palindrome
 class Solution:
     def isPalindrome(self, x: int) -> bool:
         x_str = str(x)

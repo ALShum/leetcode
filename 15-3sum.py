@@ -1,3 +1,4 @@
+## Sort array and use two pointers
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         nums = sorted(nums)
