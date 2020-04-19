@@ -18,14 +18,16 @@ class Solution:
                 # found a bad version
                 if badVer[m]:
                     # if previous ver is good, then we found the first bad ver
-                    if not badVer.get(m - 1, isBadVersion(m - 1)):
+                    badVer[m - 1] = badVer.get(m - 1, isBadVersion(m - 1))
+                    if not badVer[m - 1]:
                         return m
                     return firstBadVersionInner(l, m)
 
                 # found a good version
                 else:
                     # if the next ver is bad, then we found the first bad ver
-                    if badVer.get(m + 1, isBadVersion(m + 1)):
+                    badVer[m + 1] = badVer.get(m + 1, isBadVersion(m + 1))
+                    if badVer[m + 1]:
                         return m + 1
                     return firstBadVersionInner(m, h)
             return None
