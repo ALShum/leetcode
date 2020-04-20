@@ -1,4 +1,4 @@
-# Definition for a binary tree node.
+    # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, x):
 #         self.val = x
@@ -18,17 +18,14 @@ class Solution:
         return ans
 
     def inorderTraversal(self, root: TreeNode):
-        ans = []
-
         cur = root
-        q = [root]
-        while cur.left:
-            q.append(cur.left)
-            cur = cur.left
-
-        while q:
-            node = q.pop()
-            ans.append(node.val)
-            q.append(node.right)
-
+        q = []
+        ans = []
+        while q or cur:
+            while cur:
+                q.append(cur)
+                cur = cur.left
+            cur = q.pop()
+            ans.append(cur.val)
+            cur = cur.right
         return ans
