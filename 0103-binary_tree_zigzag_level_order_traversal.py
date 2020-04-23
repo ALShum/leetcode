@@ -9,7 +9,7 @@
 #         self.right = None
 
 class Solution:
-    def zigzagLevelOrder(self, root: TreeNode) -> List[List[int]]:
+    def zigzagLevelOrder1(self, root: TreeNode) -> List[List[int]]:
         ans = []
         if not root:
             return ans
@@ -33,10 +33,47 @@ class Solution:
                 useZig = True
                 if zag_elems:
                     ans.append(zag_elems)
-                zag_elems = []
+                    zag_elems = []
             if not zig:
                 useZig = False
                 if zig_elems:
                     ans.append(zig_elems)
-                zig_elems = []
+                    ig_elems = []
         return ans
+
+
+    def zigzagLevelOrder(self, root):
+        ans = []
+        def zigzagInner(root, level = 0):
+            if not root:
+                return
+            if len(ans) == level:
+                ans.append([])
+
+            if level % 2 == 0:
+                ans[level].append(root.val)
+            else:
+                ans[level].insert(0, root.val)
+
+            zigzagInner(root.left, level + 1)
+            zigzagInner(root.right, level + 1)
+        zigzagInner(root, 0)
+        return ans
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
