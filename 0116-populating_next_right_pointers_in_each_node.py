@@ -1,3 +1,6 @@
+## This uses a recursive approach, but we could also use level-order traversal
+## See 0117 for a level-order traversal
+
 """
 # Definition for a Node.
 class Node:
